@@ -42,7 +42,18 @@ app.get('/about' , (req , res) => {
 	});
 });
 
+app.get('/projects' , (req,res) => {
+	res.render('projects.hbs',{
+		pageTitle:'Projects'
+	})
+})
+
 //bad - send back JSON with errorMessage
+app.get('/bad', (req,res) => {
+	res.send({
+		errorMessage:'Unable to handle request'
+	});
+})
 
 app.get('/error' , (req , res) => {
 	res.send({
